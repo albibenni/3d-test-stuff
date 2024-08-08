@@ -1,6 +1,13 @@
 console.log("hello 3d");
 let gl: WebGL2RenderingContext;
 
+/**
+ * @description update clear color of the WebGL2RenderingContext
+ * @param color color components, rgba
+ * @returns void
+ * @example
+ * updateClearColor(0.2, 0.2, 0.8, 1.0);
+ */
 function updateClearColor(...color: number[]) {
     //@ts-ignore
     gl.clearColor(...color);
@@ -8,6 +15,13 @@ function updateClearColor(...color: number[]) {
     gl.viewport(0, 0, 0, 0);
 }
 
+/**
+    * @description listen to KeyboardEvent and modify the clear color
+    * @param event {KeyboardEvent} keyboard key event
+    * @returns void
+    * @example
+    * window.onkeydown = checkKey;
+*/
 function checkKey(event: KeyboardEvent) {
     switch (event.key) {
         // number 1 => green
